@@ -5,16 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.giovankabisano.dynamicfeatures.model.PokemonModel
 import kotlinx.android.synthetic.main.view_holder_pokemon_list.view.*
 
 class PokemonListAdapter(
-    private val clickJobCard: () -> Unit,
+    private val onClick: () -> Unit,
     private val context: Context
 ) : RecyclerView.Adapter<PokemonListAdapter.ViewHolder>() {
 
-    private var dataSet = mutableListOf<String>()
+    private var dataSet = mutableListOf<PokemonModel>()
 
-    fun submitDataSet(incompleteShipmentsDataSet: List<String>) {
+    fun submitDataSet(incompleteShipmentsDataSet: List<PokemonModel>) {
         dataSet.clear()
         dataSet.addAll(incompleteShipmentsDataSet)
         notifyDataSetChanged()
@@ -43,11 +44,27 @@ class PokemonListAdapter(
 
     inner class ViewHolder(
         view: View,
-        val context: Context
+        private val context: Context
     ) : RecyclerView.ViewHolder(view) {
 
-        fun bind(waitingForAssignmentJob: String) {
-            itemView.card.setCardBackgroundColor(context.resources.getColor(R.color.water_type_dark))
+        fun bind(pokemon: PokemonModel) {
+            itemView.card.setCardBackgroundColor(
+                when (pokemon.type) {
+                    PokemonModel.PokemonType.LEAF -> {
+                        context.resources.getColor(R.color.leaf_type)
+                    }
+                    PokemonModel.PokemonType.WATER -> {
+                        context.resources.getColor(R.color.water_type)
+                    }
+                    PokemonModel.PokemonType.FIRE -> {
+                        context.resources.getColor(R.color.fire_type)
+                    }
+                }
+            )
+            itemView.name.text = pokemon.name
+            itemView.type.text = pokemon.type.toString()
+            itemView.level.text = pokemon.level.toString()
+            itemView.image.setImageDrawable(context.getDrawable(pokemon.image))
         }
     }
 }
