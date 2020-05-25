@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.giovankabisano.dynamicfeatures.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main"/>
+
+    <fragment
+        android:id="@+id/customMonitorFragment"
+        android:name="com.giovankabisano.dynamicfeatures.CustomFragment"
+        android:label="customMonitorFragment" />
+
+    <fragment
+        android:id="@+id/featureFragment"
+        android:name="com.giovankabisano.onboarding.FeatureFragment"
+        android:label="fragment_feature"
+        app:moduleName="onboarding"
+        tools:layout="@layout/fragment_feature" />
+</navigation>

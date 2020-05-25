@@ -1,0 +1,3 @@
+include ':onboarding'
+include ':app'
+rootProject.name = "DynamicFeatures"
