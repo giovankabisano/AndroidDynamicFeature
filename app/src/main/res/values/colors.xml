@@ -3,4 +3,13 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="fire_type">#e17733</color>
+    <color name="fire_type_dark">#a94900</color>
+    <color name="fire_type_light">#ffa761</color>
+    <color name="water_type_dark">#385583</color>
+    <color name="water_type">#6781b3</color>
+    <color name="water_type_light">#97b0e5</color>
+    <color name="leaf_type">#71b951</color>
+    <color name="leaf_type_dark">#408823</color>
+    <color name="leaf_type_light">#a3ec80</color>
 </resources>
