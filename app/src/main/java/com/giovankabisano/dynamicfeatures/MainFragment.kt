@@ -5,8 +5,6 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.giovankabisano.dynamicfeatures.model.PokemonModel
 import kotlinx.android.synthetic.main.fragment_main.*
 
@@ -33,16 +31,70 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                     R.drawable.poke001
                 ),
                 PokemonModel(
-                    "Bulbasaur",
-                    PokemonModel.PokemonType.WATER,
+                    "Ivysaur",
+                    PokemonModel.PokemonType.LEAF,
                     100,
-                    R.drawable.poke001
+                    R.drawable.poke002
                 ),
                 PokemonModel(
-                    "Bulbasaur",
+                    "Venusaur",
+                    PokemonModel.PokemonType.LEAF,
+                    100,
+                    R.drawable.poke003
+                ),
+                PokemonModel(
+                    "Charmander",
                     PokemonModel.PokemonType.FIRE,
                     100,
-                    R.drawable.poke001
+                    R.drawable.poke004
+                ),
+                PokemonModel(
+                    "Charmeleon",
+                    PokemonModel.PokemonType.FIRE,
+                    100,
+                    R.drawable.poke005
+                ),
+                PokemonModel(
+                    "Charizard",
+                    PokemonModel.PokemonType.FIRE,
+                    100,
+                    R.drawable.poke006
+                ),
+                PokemonModel(
+                    "Squirtle",
+                    PokemonModel.PokemonType.WATER,
+                    100,
+                    R.drawable.poke007
+                ),
+                PokemonModel(
+                    "Wartortle",
+                    PokemonModel.PokemonType.WATER,
+                    100,
+                    R.drawable.poke008
+                ),
+                PokemonModel(
+                    "Blastoise",
+                    PokemonModel.PokemonType.WATER,
+                    100,
+                    R.drawable.poke009
+                ),
+                PokemonModel(
+                    "Caterpie",
+                    PokemonModel.PokemonType.LEAF,
+                    100,
+                    R.drawable.poke010
+                ),
+                PokemonModel(
+                    "Metapod",
+                    PokemonModel.PokemonType.LEAF,
+                    100,
+                    R.drawable.poke011
+                ),
+                PokemonModel(
+                    "Butterfree",
+                    PokemonModel.PokemonType.LEAF,
+                    100,
+                    R.drawable.poke012
                 )
             )
         )
@@ -56,8 +108,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     }
 
-    fun onIncompleteShipmentClicked() {
-
+    fun onIncompleteShipmentClicked(pokemonModel: PokemonModel) {
+        findNavController().navigate(R.id.customMonitorFragment)
     }
 
 }

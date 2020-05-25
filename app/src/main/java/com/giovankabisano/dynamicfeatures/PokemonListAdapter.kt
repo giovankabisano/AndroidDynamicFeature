@@ -9,7 +9,7 @@ import com.giovankabisano.dynamicfeatures.model.PokemonModel
 import kotlinx.android.synthetic.main.view_holder_pokemon_list.view.*
 
 class PokemonListAdapter(
-    private val onClick: () -> Unit,
+    private val onClick: (PokemonModel) -> Unit,
     private val context: Context
 ) : RecyclerView.Adapter<PokemonListAdapter.ViewHolder>() {
 
@@ -65,6 +65,9 @@ class PokemonListAdapter(
             itemView.type.text = pokemon.type.toString()
             itemView.level.text = pokemon.level.toString()
             itemView.image.setImageDrawable(context.getDrawable(pokemon.image))
+            itemView.setOnClickListener {
+                onClick(pokemon)
+            }
         }
     }
 }
