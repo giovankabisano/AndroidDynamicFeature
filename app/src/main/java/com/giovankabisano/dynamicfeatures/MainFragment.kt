@@ -12,13 +12,13 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
         val navController = findNavController()
 
-        mapOf(
-            Pair(R.id.haha, R.id.customMonitorFragment)
-        ).forEach { (viewId, destinationId) ->
-            view.findViewById<Button>(viewId).setOnClickListener {
-                navController.navigate(destinationId)
-            }
-        }
+//        mapOf(
+//            Pair(R.id.haha, R.id.customMonitorFragment)
+//        ).forEach { (viewId, destinationId) ->
+//            view.findViewById<Button>(viewId).setOnClickListener {
+//                navController.navigate(destinationId)
+//            }
+//        }
 
     }
 
