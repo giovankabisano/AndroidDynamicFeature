@@ -61,6 +61,9 @@ dependencies {
     api("androidx.constraintlayout:constraintlayout:1.1.3")
     api("androidx.recyclerview:recyclerview:1.1.0")
     api("androidx.cardview:cardview:1.0.0")
+    api("org.koin:koin-android-scope:2.0.1")
+    api("org.koin:koin-android-viewmodel:2.0.1")
+    api("org.koin:koin-android:2.0.1")
     implementation("com.google.android.play:core:1.6.5")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
 }

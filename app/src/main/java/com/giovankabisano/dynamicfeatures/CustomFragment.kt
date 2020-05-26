@@ -1,21 +1,27 @@
 package com.giovankabisano.dynamicfeatures
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.dynamicfeatures.DynamicExtras
 import androidx.navigation.dynamicfeatures.DynamicInstallMonitor
 import androidx.navigation.fragment.findNavController
+import com.giovankabisano.dynamicfeatures.presentation.SharedPreferenceViewModel
 import com.google.android.play.core.splitinstall.SplitInstallSessionState
 import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class CustomFragment : Fragment(R.layout.fragment_custom) {
 
+    private val sharedPreferenceViewModel by sharedViewModel<SharedPreferenceViewModel>()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        openOnboardingPage()
+        if (sharedPreferenceViewModel.shouldShowOnboardingPage()) {
+            openOnboardingPage()
+            sharedPreferenceViewModel.setOnboardingPageAsShown()
+        }
     }
 
     private fun openOnboardingPage() {
