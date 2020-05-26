@@ -1,10 +1,11 @@
-package com.giovankabisano.dynamicfeatures
+package com.giovankabisano.dynamicfeatures.presentation
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.giovankabisano.dynamicfeatures.R
 import com.giovankabisano.dynamicfeatures.model.PokemonModel
 import kotlinx.android.synthetic.main.view_holder_pokemon_list.view.*
 

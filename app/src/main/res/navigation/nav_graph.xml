@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.giovankabisano.dynamicfeatures.MainFragment"
+        android:name="com.giovankabisano.dynamicfeatures.presentation.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main"/>
 
     <fragment
         android:id="@+id/customMonitorFragment"
-        android:name="com.giovankabisano.dynamicfeatures.CustomFragment"
+        android:name="com.giovankabisano.dynamicfeatures.presentation.PokemonDetailFragment"
         android:label="customMonitorFragment" />
 
     <fragment

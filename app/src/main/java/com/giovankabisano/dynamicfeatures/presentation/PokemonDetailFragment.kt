@@ -1,4 +1,4 @@
-package com.giovankabisano.dynamicfeatures
+package com.giovankabisano.dynamicfeatures.presentation
 
 import android.os.Bundle
 import android.view.View
@@ -7,12 +7,12 @@ import androidx.lifecycle.Observer
 import androidx.navigation.dynamicfeatures.DynamicExtras
 import androidx.navigation.dynamicfeatures.DynamicInstallMonitor
 import androidx.navigation.fragment.findNavController
-import com.giovankabisano.dynamicfeatures.presentation.SharedPreferenceViewModel
+import com.giovankabisano.dynamicfeatures.R
 import com.google.android.play.core.splitinstall.SplitInstallSessionState
 import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
 import org.koin.android.viewmodel.ext.android.sharedViewModel
 
-class CustomFragment : Fragment(R.layout.fragment_custom) {
+class PokemonDetailFragment : Fragment(R.layout.fragment_pokemon_detail) {
 
     private val sharedPreferenceViewModel by sharedViewModel<SharedPreferenceViewModel>()
 
