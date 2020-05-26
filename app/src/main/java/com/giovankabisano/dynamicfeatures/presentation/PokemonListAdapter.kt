@@ -10,8 +10,7 @@ import com.giovankabisano.dynamicfeatures.model.PokemonModel
 import kotlinx.android.synthetic.main.view_holder_pokemon_list.view.*
 
 class PokemonListAdapter(
-    private val onClick: (PokemonModel) -> Unit,
-    private val context: Context
+    private val onClick: (PokemonModel) -> Unit
 ) : RecyclerView.Adapter<PokemonListAdapter.ViewHolder>() {
 
     private var dataSet = mutableListOf<PokemonModel>()

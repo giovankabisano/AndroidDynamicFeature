@@ -18,12 +18,22 @@ class PokemonDetailFragment : Fragment(R.layout.fragment_pokemon_detail) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        /**
+         * When the user never open this page, then we will show onboarding page.
+         */
         if (sharedPreferenceViewModel.shouldShowOnboardingPage()) {
             openOnboardingPage()
             sharedPreferenceViewModel.setOnboardingPageAsShown()
         }
     }
 
+    /**
+     * Mainly, this function will make the user navigated to Onboarding page.
+     * When the user still don't have onboarding feature on the phone, then we will download that feature from playstore.
+     *
+     * Note: If you don't have playstore account or want to test the dynamic feature, you can execute this command
+     *       "gradlew installApkSplitsForTestDebug"
+     */
     private fun openOnboardingPage() {
         val installMonitor = DynamicInstallMonitor()
         val dynamicExtras = DynamicExtras.Builder()
@@ -42,10 +52,16 @@ class PokemonDetailFragment : Fragment(R.layout.fragment_pokemon_detail) {
             viewLifecycleOwner,
             object : Observer<SplitInstallSessionState> {
                 override fun onChanged(state: SplitInstallSessionState) {
+                    /**
+                     * Open onboarding page when the modules have been installed.
+                     */
                     if (state.status() == SplitInstallSessionStatus.INSTALLED) {
                         openOnboardingPage()
                     }
 
+                    /**
+                     * Delete observer after the session have been finished
+                     */
                     if (state.hasTerminalStatus()) {
                         installMonitor.status.removeObserver(this)
                     }

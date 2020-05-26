@@ -9,7 +9,7 @@
         android:id="@+id/mainFragment"
         android:name="com.giovankabisano.dynamicfeatures.presentation.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main"/>
+        tools:layout="@layout/fragment_main" />
 
     <fragment
         android:id="@+id/customMonitorFragment"
@@ -18,8 +18,8 @@
 
     <fragment
         android:id="@+id/featureFragment"
-        android:name="com.giovankabisano.onboarding.FeatureFragment"
+        android:name="com.giovankabisano.onboarding.OnboardingFragment"
         android:label="fragment_feature"
         app:moduleName="onboarding"
-        tools:layout="@layout/fragment_feature" />
+        tools:layout="@layout/fragment_onboarding" />
 </navigation>

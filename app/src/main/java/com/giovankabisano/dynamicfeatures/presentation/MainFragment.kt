@@ -11,11 +11,10 @@ import kotlinx.android.synthetic.main.fragment_main.*
 
 class MainFragment : Fragment(R.layout.fragment_main) {
 
-    private val incompleteShipmentAdapter: PokemonListAdapter
+    private val pokemonListAdapter: PokemonListAdapter
             by lazy {
                 PokemonListAdapter(
-                    ::onIncompleteShipmentClicked,
-                    requireContext()
+                    ::onPokemonClicked
                 )
             }
 
@@ -24,11 +23,16 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         val navController = findNavController()
 
         recycler.also {
-            it.adapter = incompleteShipmentAdapter
+            it.adapter = pokemonListAdapter
             it.layoutManager = GridLayoutManager(requireContext(), 2)
         }
 
-        incompleteShipmentAdapter.submitDataSet(
+        /**
+         * Hardcoded data.
+         * If you want full list data of Pokemon, you can access that here
+         * https://gist.githubusercontent.com/mrcsxsiq/b94dbe9ab67147b642baa9109ce16e44/raw/97811a5df2df7304b5bc4fbb9ee018a0339b8a38/pokemon.json
+         */
+        pokemonListAdapter.submitDataSet(
             listOf(
                 PokemonModel(
                     "Bulbasaur",
@@ -106,7 +110,19 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         )
     }
 
-    fun onIncompleteShipmentClicked(pokemonModel: PokemonModel) {
+    /**
+     * @description:
+     * Action function after one of the pokemon list get clicked.
+     *
+     * *******************************************************************************************************
+     * **For now, no matter what kind of pokemon that get clicked by the user,                              **
+     * **we always showing Bulbasaur Detail, because the purpose of this codelab is to show DynamicFeatures.**
+     * *******************************************************************************************************
+     *
+     * @param: pokemonModel -> We can get the ID of pokemon that getting clicked and request the pokemon detail from backend.
+     *
+     */
+    private fun onPokemonClicked(pokemonModel: PokemonModel) {
         findNavController().navigate(R.id.customMonitorFragment)
     }
 
