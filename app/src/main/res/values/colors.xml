@@ -12,4 +12,7 @@
     <color name="leaf_type">#71b951</color>
     <color name="leaf_type_dark">#408823</color>
     <color name="leaf_type_light">#a3ec80</color>
+
+    <color name="poison">#214B9F</color>
+
 </resources>
