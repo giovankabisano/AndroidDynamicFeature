@@ -98,14 +98,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 )
             )
         )
-//        mapOf(
-//            Pair(R.id.haha, R.id.customMonitorFragment)
-//        ).forEach { (viewId, destinationId) ->
-//            view.findViewById<Button>(viewId).setOnCli8ckListener {
-//                navController.navigate(destinationId)
-//            }
-//        }
-
     }
 
     fun onIncompleteShipmentClicked(pokemonModel: PokemonModel) {

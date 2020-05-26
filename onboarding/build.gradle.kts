@@ -2,6 +2,8 @@
 plugins {
     id("com.android.dynamic-feature")
     kotlin("android")
+    id("kotlin-android")
+    id("kotlin-android-extensions")
 }
 
 android {
@@ -21,4 +23,5 @@ android {
 
 dependencies {
     implementation(project(":app"))
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
 }
