@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.giovankabisano.dynamicfeatures.R
 import com.google.android.play.core.splitinstall.SplitInstallSessionState
 import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
+import kotlinx.android.synthetic.main.fragment_pokemon_detail.*
 import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class PokemonDetailFragment : Fragment(R.layout.fragment_pokemon_detail) {
@@ -24,6 +25,13 @@ class PokemonDetailFragment : Fragment(R.layout.fragment_pokemon_detail) {
         if (sharedPreferenceViewModel.shouldShowOnboardingPage()) {
             openOnboardingPage()
             sharedPreferenceViewModel.setOnboardingPageAsShown()
+        }
+        /**
+         * Setup back button.
+         * Navigate up (to previous page) when back button clicked.
+         */
+        back_button.setOnClickListener {
+            findNavController().navigateUp()
         }
     }
 
@@ -43,6 +51,7 @@ class PokemonDetailFragment : Fragment(R.layout.fragment_pokemon_detail) {
         findNavController().navigate(R.id.featureFragment, null, null, dynamicExtras)
 
         if (installMonitor.isInstallRequired) {
+            progress_bar.visibility = View.VISIBLE
             observeInstallationState(installMonitor)
         }
     }
@@ -56,6 +65,7 @@ class PokemonDetailFragment : Fragment(R.layout.fragment_pokemon_detail) {
                      * Open onboarding page when the modules have been installed.
                      */
                     if (state.status() == SplitInstallSessionStatus.INSTALLED) {
+                        progress_bar.visibility = View.GONE
                         openOnboardingPage()
                     }
 
