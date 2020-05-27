@@ -57,6 +57,7 @@ android {
 
 dependencies {
     api("androidx.navigation:navigation-dynamic-features-fragment:2.3.0-alpha01")
+    api("androidx.navigation:navigation-fragment-ktx:2.2.0")
     api("androidx.appcompat:appcompat:1.1.0")
     api("androidx.constraintlayout:constraintlayout:1.1.3")
     api("androidx.recyclerview:recyclerview:1.1.0")

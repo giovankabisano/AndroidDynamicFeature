@@ -11,17 +11,33 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.giovankabisano.dynamicfeatures.presentation.MainFragment"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/mainFragment_to_pokemonDetailFragment"
+            app:destination="@id/pokemonDetailFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+    </fragment>
 
     <fragment
         android:id="@+id/pokemonDetailFragment"
-        android:name="com.giovankabisano.dynamicfeatures.presentation.PokemonDetailFragment" />
+        android:name="com.giovankabisano.dynamicfeatures.presentation.PokemonDetailFragment">
+        <action
+            android:id="@+id/pokemonDetailFragment_to_onboardingFragment"
+            app:destination="@id/onboardingFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+    </fragment>
 
     <!--                             -->
     <!-- Page from onboarding module -->
     <!--                             -->
     <fragment
-        android:id="@+id/featureFragment"
+        android:id="@+id/onboardingFragment"
         android:name="com.giovankabisano.onboarding.OnboardingFragment"
         android:label="fragment_feature"
         app:moduleName="onboarding"

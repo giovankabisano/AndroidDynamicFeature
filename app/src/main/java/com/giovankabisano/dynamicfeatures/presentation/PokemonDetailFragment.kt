@@ -48,7 +48,12 @@ class PokemonDetailFragment : Fragment(R.layout.fragment_pokemon_detail) {
             .setInstallMonitor(installMonitor)
             .build()
 
-        findNavController().navigate(R.id.featureFragment, null, null, dynamicExtras)
+        findNavController().navigate(
+            R.id.pokemonDetailFragment_to_onboardingFragment,
+            null,
+            null,
+            dynamicExtras
+        )
 
         if (installMonitor.isInstallRequired) {
             progress_bar.visibility = View.VISIBLE
