@@ -5,17 +5,21 @@
     android:id="@+id/nav_graph.xml"
     app:startDestination="@id/mainFragment">
 
+    <!--                             -->
+    <!-- Pages from base module      -->
+    <!--                             -->
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.giovankabisano.dynamicfeatures.presentation.MainFragment"
-        android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
 
     <fragment
-        android:id="@+id/customMonitorFragment"
-        android:name="com.giovankabisano.dynamicfeatures.presentation.PokemonDetailFragment"
-        android:label="customMonitorFragment" />
+        android:id="@+id/pokemonDetailFragment"
+        android:name="com.giovankabisano.dynamicfeatures.presentation.PokemonDetailFragment" />
 
+    <!--                             -->
+    <!-- Page from onboarding module -->
+    <!--                             -->
     <fragment
         android:id="@+id/featureFragment"
         android:name="com.giovankabisano.onboarding.OnboardingFragment"

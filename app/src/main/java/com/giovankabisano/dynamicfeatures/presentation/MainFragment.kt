@@ -123,7 +123,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
      *
      */
     private fun onPokemonClicked(pokemonModel: PokemonModel) {
-        findNavController().navigate(R.id.customMonitorFragment)
+        findNavController().navigate(R.id.pokemonDetailFragment)
     }
 
 }
