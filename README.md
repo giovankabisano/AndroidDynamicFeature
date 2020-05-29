@@ -1,3 +1,5 @@
+Medium Link : https://medium.com/@gbisano/understanding-android-dynamic-features-new-meta-992ed1470caf
+
 # AndroidDynamicFeature
 Pokedex application that implements Dynamic Feature. This app consist of 3 functionality:
 1. See Pokemon List (Dummy data)
